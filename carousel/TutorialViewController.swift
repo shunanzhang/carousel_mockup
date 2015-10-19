@@ -40,7 +40,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         if page == 3 {
             tutorialPageControl.hidden = true
             
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            UIView.animateWithDuration(1, animations: { () -> Void in
                 self.spinImageView.alpha = 1
             })
             

@@ -20,26 +20,18 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageView5: UIImageView!
     @IBOutlet weak var imageView6: UIImageView!
     
-    let image1X = 46
-    let image1Y = 745
-    let image2X = 198
-    let image2Y = 745
-    let image3X = 198
-    let image3Y = 821
-    let image4X = 198
-    let image4Y = 897
-    let image5X = 123
-    let image5Y = 897
-    let image6X = 46
-    let image6Y = 897
     
-    var rotation = CGFloat(0)
-    var tx = CGFloat(0)
-    var ty = CGFloat(0)
-    
-    var rotationTransform: CGAffineTransform!
-    var translationTransform:CGAffineTransform!
-    var overallTransform: CGAffineTransform!
+    var newTransform1: CGAffineTransform!
+    var newTransform21: CGAffineTransform!
+    var newTransform22: CGAffineTransform!
+    var newTransform31: CGAffineTransform!
+    var newTransform32: CGAffineTransform!
+    var newTransform41: CGAffineTransform!
+    var newTransform42: CGAffineTransform!
+    var newTransform51: CGAffineTransform!
+    var newTransform52: CGAffineTransform!
+    var newTransform61: CGAffineTransform!
+    var newTransform62: CGAffineTransform!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +40,28 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         
         introScrollView.delegate = self
         
-      //  imageView1.transform =  CGAffineTransformMakeRotation(CGFloat(45 * M_PI / 180))
+        newTransform1 = CGAffineTransformMakeTranslation(-80, -350)
+        imageView1.transform =  CGAffineTransformRotate(newTransform1, CGFloat(-M_PI/5))
         
+        newTransform21 = CGAffineTransformMakeTranslation(-60, -350)
+        newTransform22 = CGAffineTransformRotate(newTransform21, CGFloat(M_PI/30))
+        imageView2.transform =  CGAffineTransformScale(newTransform22, 2, 2)
+        
+        newTransform31 = CGAffineTransformMakeTranslation(0, -360)
+        newTransform32 = CGAffineTransformRotate(newTransform31, CGFloat(M_PI/10))
+        imageView3.transform =  CGAffineTransformScale(newTransform32, 2, 2)
+        
+        newTransform41 = CGAffineTransformMakeTranslation(20, -380)
+        newTransform42 = CGAffineTransformRotate(newTransform41, CGFloat(M_PI/6))
+        imageView4.transform =  CGAffineTransformScale(newTransform42, 2, 2)
+        
+        newTransform51 = CGAffineTransformMakeTranslation(0, -400)
+        newTransform52 = CGAffineTransformRotate(newTransform51, CGFloat(M_PI/20))
+        imageView5.transform =  CGAffineTransformScale(newTransform52, 1.8, 1.8)
+        
+        newTransform61 = CGAffineTransformMakeTranslation(0, -400)
+        newTransform62 = CGAffineTransformRotate(newTransform61, CGFloat(M_PI/50))
+        imageView6.transform =  CGAffineTransformScale(newTransform62, 2, 2)
     }
 
     
@@ -59,10 +71,14 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView){
-        imageView1.frame.origin.x = 46
-        imageView1.frame.origin.y = 745
-        //imageView1.transform = CGAffineTransformMakeRotation(CGFloat(45 * M_PI / 180))
-        
+        UIView.animateWithDuration(1.5) { () -> Void in
+            self.imageView1.transform = CGAffineTransformIdentity
+            self.imageView2.transform = CGAffineTransformIdentity
+            self.imageView3.transform = CGAffineTransformIdentity
+            self.imageView4.transform = CGAffineTransformIdentity
+            self.imageView5.transform = CGAffineTransformIdentity
+            self.imageView6.transform = CGAffineTransformIdentity
+        }
     }
     
     // called on start of dragging (may require some time and or distance to move)
@@ -81,13 +97,6 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func updateTransform(){
-        rotationTransform = CGAffineTransformMakeRotation(rotation)
-        translationTransform = CGAffineTransformMakeTranslation(tx, ty)
-        overallTransform = CGAffineTransformConcat(rotationTransform, translationTransform)
-    }
-    
-
     
 }
 

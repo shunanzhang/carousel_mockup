@@ -20,10 +20,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro_tile1" id="zdx-DB-rCH">
-                                        <rect key="frame" x="46" y="745" width="153" height="152"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro_tile2" id="v9p-P0-wS6">
                                         <rect key="frame" x="198" y="745" width="76" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -51,6 +47,10 @@
                                             <segue destination="t8Y-AK-Dqc" kind="modal" id="yMh-yS-g10"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro_tile1" id="zdx-DB-rCH">
+                                        <rect key="frame" x="46" y="745" width="153" height="152"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
