@@ -340,7 +340,7 @@
                                 <rect key="frame" x="8" y="26" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="4gM-Ne-c9H" kind="modal" modalTransitionStyle="flipHorizontal" id="AN6-YK-LFK"/>
+                                    <segue destination="4gM-Ne-c9H" kind="modal" animates="NO" modalTransitionStyle="flipHorizontal" id="AN6-YK-LFK"/>
                                 </connections>
                             </button>
                         </subviews>
