@@ -308,6 +308,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="760"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D3B-gg-Kng">
+                                <rect key="frame" x="137" y="365" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" animates="NO" id="F23-3a-GfA"/>
+                                </connections>
+                            </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings_nav" id="fDX-FH-fuF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -324,7 +331,7 @@
                                         <rect key="frame" x="0.0" y="623" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="modal" animates="NO" id="CPQ-HI-5ee"/>
+                                            <action selector="didPressButton:" destination="dGC-r1-FIM" eventType="touchUpInside" id="Pa0-Gu-P84"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -333,7 +340,7 @@
                                 <rect key="frame" x="8" y="26" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="4gM-Ne-c9H" kind="modal" animates="NO" id="AN6-YK-LFK"/>
+                                    <segue destination="4gM-Ne-c9H" kind="modal" modalTransitionStyle="flipHorizontal" id="AN6-YK-LFK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -343,6 +350,7 @@
                     <size key="freeformSize" width="320" height="760"/>
                     <connections>
                         <outlet property="settingsScrollView" destination="lV9-41-Zim" id="Z8S-Qk-ifK"/>
+                        <outlet property="signOutButton" destination="4HU-js-UIh" id="ZOw-YW-3Jp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnR-wQ-Ngg" userLabel="First Responder" sceneMemberID="firstResponder"/>

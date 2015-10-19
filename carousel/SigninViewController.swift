@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SigninViewController: UIViewController {
+class SigninViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var signinScrollView: UIScrollView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginViewWithButton: UIView!
-    
     @IBOutlet weak var thinkingIndicator: UIActivityIndicatorView!
     
     let offset: CGFloat = -120
@@ -23,17 +22,37 @@ class SigninViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        signinScrollView.delegate = self
 
         signinScrollView.contentSize = CGSize(width: 320, height: 600)
+        
+        signinScrollView.scrollEnabled = false
+        
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
+    
+    func scrollViewDidEndDecelerating (signinScrollView: UIScrollView) {
+        
+        if signinScrollView.contentOffset.y < 50 {
+            view.endEditing(true)
+            
+            loginViewWithButton.transform = CGAffineTransformIdentity
+        }
+    }
+    
+    
+    
     @IBAction func didTapTextField(sender: AnyObject) {
+        
+        signinScrollView.scrollEnabled = true
+        
         UIView.animateWithDuration(0.5) { () -> Void in
             self.signinScrollView.contentOffset.y = 80
         }
@@ -43,6 +62,8 @@ class SigninViewController: UIViewController {
         //loginButton.transform = CGAffineTransformMakeTranslation(loginButton.frame.origin.x, initialButtonY + offset)
     
     }
+    
+    
     
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
@@ -54,6 +75,7 @@ class SigninViewController: UIViewController {
     }
 
 
+    
     @IBAction func didPressButton(sender: AnyObject) {
 
         self.thinkingIndicator.startAnimating()
